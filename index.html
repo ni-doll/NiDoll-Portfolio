@@ -66,28 +66,56 @@
          
         <div class="tab-content-scroll">
           <div class="panel" id="content1">
-            <h2>Digital Art</h2>
-            <p>Obsah záložky...</p>
-            <img src="example.jpg" alt="Obrázek" style="max-width: 100%" />
-            <p>
-              Line 1<br />Line 2<br />Line 3<br />Line 4<br />Line 5<br />Line
-              6<br />Line 7<br />Line 8<br />Line 9<br />Line 10
-            </p>
+            <h2>Personal Artwork</h2>
+            <br>
+            <div class="gallery">
+              <img src="1.webp" alt="Obrázek"/>
+              <img src="2.webp" alt="Obrázek"/>
+              <img src="4.webp" alt="Obrázek"/>
+              <img src="5.webp" alt="Obrázek"/>
+              <img src="6.webp" alt="Obrázek"/>
+              <img src="8.webp" alt="Obrázek"/>
+              <img src="9.webp" alt="Obrázek"/>
+              <img src="10.webp" alt="Obrázek"/>
+              <img src="3.webp" alt="Obrázek"/>
+              <img src="7.webp" alt="Obrázek"/>
+              <img src="mollyruu 2.webp" alt="Obrázek"/>
+              <img src="ASH_ tarott inspo forest_FIN 1.webp" alt="Obrázek"/>
+            </div>
+            <br>
+            <h2>Concept Art</h2>
+            <br>
+            <div class="gallery">
+              <img src="Athena.webp" alt="Obrázek"/>
+              <img src="Athena 2.webp" alt="Obrázek"/>
+              <img src="Doc 1.webp" alt="Obrázek"/>
+              <img src="Doc 2.webp" alt="Obrázek"/>
+              <img src="soldier 1.webp" alt="Obrázek"/>
+              <img src="soldier 2.webp" alt="Obrázek"/>
+            </div>
+            <br>
+            <p>See more on <a href="https://www.artstation.com/nidoll">ArtStation</a>, <a href="https://x.com/NiDoll">Twitter (X)</a></p>
           </div>
           <div class="panel" id="content2">
             <h2>Graphic Design</h2>
-            <p>Project 1: Amazing app</p>
-            <p>s
-              Item 1<br />Item 2<br />Item 3<br />Item 4<br />Item 5<br />Item
-              6<br />Item 7<br />Item 8<br />Item 9<br />Item 10
-            </p>
+            <br>
+            <div class="gallery">
+              <img src="Instagram post - 1.webp" alt="Obrázek"/>
+              <img src="Cat App.webp" alt="Obrázek"/>
+            </div>
           </div>
           <div class="panel" id="content3">
             <h2>UX/UI Design</h2>
-            <p>
-              Section A<br />Section B<br />Section C<br />Section D<br />Section
-              E<br />Section F<br />Section G<br />Section H<br />Section I
-            </p>
+            <br>
+            <div class="gallery">
+              <img src="Světlá Verze.webp" alt="Obrázek"/>
+              <img src="Tmavá Verze 2.webp" alt="Obrázek"/>
+              <img src="Purple - White.webp" alt="Obrázek"/>
+              <img src="Grey - White.webp" alt="Obrázek"/>
+              <img src="Desktop - 1.webp" alt="Obrázek"/>
+              <img src="KVIZ.webp" alt="Obrázek"/>
+              <img src="Cat App.webp" alt="Obrázek"/>
+            </div>
           </div>
         </div>
       </div>
@@ -132,14 +160,29 @@ Angličtina - výborná úroveň</p>
     <a href="mailto:nidoll.art@gmail.com">nidoll.art@gmail.com</a></p>
 
     <div class="socials">
-      <a href="#"><img src="https://www.linkedin.com/in/nikola-doležalová-1869ba237" alt="LinkedIn"></a>
-      <a href="#"><img src="https://x.com/NiDoll" alt="X"></a>
-      <a href="#"><img src="https://www.artstation.com/nidoll" alt="Artstation"></a>
-      <a href="#"><img src="cv.png" alt="CV"></a>
+      <a href="https://www.linkedin.com/in/nikola-doležalová-1869ba237"><img src="Linkedin Purple.svg" alt="LinkedIn"></a>
+      <a href="https://x.com/NiDoll"><img src="X.svg" alt="X"></a>
+      <a href="https://www.artstation.com/nidoll"><img src="ArtStation Purple.svg" alt="Artstation"></a>
+      <a href="CVDoležalová Nikola.pdf"><img src="CV.svg" alt="CV"></a>
     </div>
   </section>
     </section>
   </div>
     </main>
+    <!----------------------- Lightbox modal ----------------------->
+<div id="lightbox-modal" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <img id="lightbox-img" src="" style="max-width:90vw; max-height:90vh; border-radius:16px;">
+</div>
+<script>
+  document.querySelectorAll('.gallery img').forEach(img => {
+    img.addEventListener('click', function() {
+      document.getElementById('lightbox-img').src = this.src;
+      document.getElementById('lightbox-modal').style.display = 'flex';
+    });
+  });
+  document.getElementById('lightbox-modal').addEventListener('click', function() {
+    this.style.display = 'none';
+  });
+</script>
   </body>
 </html>

@@ -96,63 +96,6 @@ nav .logo {
   padding: 0 20px;
 }
 
-.dropdown .dropbtn {
-  font-size: 16px;
-  color: var(--purple);
-  padding: 8px 18px;
-  background: var(--light-purple);
-  border: none;
-  border-radius: 8px; /* Zaoblení rohů */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Jemný stín */
-  font-family: inherit;
-  margin: 0;
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s, border 0.3s;
-  font-weight: bold;
-}
-
-.dropdown:hover .dropbtn,
-.dropdown .dropbtn:hover {
-  background: var(--purple);
-  color: var(--light-purple);
-  border: none;
-}
-
-/* Dropdown */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: var(--purple);
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 10px;
-  margin-top: 0.5px;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  float: none;
-  color: var(--light-purple);
-  background: var(--purple);
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  border-radius: 8px;
-}
-
-/* On hover */
-.dropdown-content a:hover {
-  background-color: var(--purple);
-  color: var(--light-orange);
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 /* ----------------------- Home/Hero Page ----------------------- */
 
 .home {
@@ -200,7 +143,7 @@ nav .logo {
 }
 
 .hero-img img {
-  max-width: 400px;
+  max-width: 600px;
   border-radius: 10px;
   padding-top: 200px;
 }
@@ -243,14 +186,14 @@ h1 {
 
 .tabs {
   display: flex;
-  justify-content: flex-start; /* Zarovná záložky vlevo */
+  justify-content: flex-start;
   gap: 24px;
-  padding: 50px 0 0 40px; /* Posune záložky o 40px doprava */
+  padding: 50px 0 0 40px;
   border-radius: 0;
   margin: 0 auto 0 auto;
-  width: 1600px; /* Stejná šířka jako .tab-content a .black-box */
-  box-shadow: none; /* Odstraní stín */
-  background: none; /* Odstraní pozadí */
+  width: 1600px;
+  box-shadow: none;
+  background: none;
   padding-top: 150px;
 }
 
@@ -262,9 +205,9 @@ h1 {
   border-radius: 8px 8px 0 0;
   background: var(--orange);
   transition: background 0.3s, color 0.3s;
-  margin-right: 1px; /* Oddělí záložky od sebe */
-  width: 200px; /* Pevná šířka pro všechny záložky */
-  text-align: center; /* Zarovná text na střed */
+  margin-right: 1px;
+  width: 200px;
+  text-align: center;
   display: inline-block;
 }
 
@@ -275,7 +218,7 @@ h1 {
 }
 
 .tab:last-child {
-  margin-right: 0; /* Poslední záložka bez mezery vpravo */
+  margin-right: 0;
 }
 
 /* Active tab highlight */
@@ -294,15 +237,15 @@ h1 {
   padding-bottom: 0;
   box-shadow: 0 4px 24px rgba(91, 46, 144, 0.08);
   margin: 0 auto 0 auto;
-  min-height: 60px; /*Přidá minimální výšku*/
+  min-height: 60px;
 }
 
 .tab-content {
   background: white;
-  border-radius: 0 0 16px 16px; /* Zaoblení pouze dole */
+  border-radius: 0 0 16px 16px;
   box-shadow: 0 4px 24px rgba(91, 46, 144, 0.08);
   padding: 16px 32px;
-  margin: 0 auto 0 auto; /* Změňte první hodnotu na menší, např. 8px */
+  margin: 0 auto 0 auto;
   max-width: 1600px;
   min-height: 1000px;
 }
@@ -332,14 +275,39 @@ h1 {
   max-height: 700px;
 }
 
-/* Show correct panel */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(91, 46, 144, 0.1);
+  background: #f4effa;
+  cursor: zoom-in;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+#lightbox-modal {
+  cursor: zoom-out;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 24px rgba(91, 46, 144, 0.18);
+}
+
 #tab1:checked ~ .tab-content-scroll #content1,
 #tab2:checked ~ .tab-content-scroll #content2,
 #tab3:checked ~ .tab-content-scroll #content3 {
   display: block;
 }
 
-/* Custom scrollbars for panels */
 .panel::-webkit-scrollbar {
   width: 8px;
 }
@@ -357,6 +325,13 @@ h1 {
 .panel {
   scrollbar-width: thin;
   scrollbar-color: var(--orange) #f4effa;
+}
+
+.gallery p {
+  color: var(--purple);
+}
+a {
+  color: #fa9f16;
 }
 
 /* Responsive for smaller screens */
